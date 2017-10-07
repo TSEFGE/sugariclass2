@@ -52,13 +52,13 @@ $sugar_config = array (
   'datef' => 'm/d/Y',
   'dbconfig' => 
   array (
-    'db_host_name' => 'us-cdbr-iron-east-05.cleardb.net',
+    'db_host_name' => 'localhost',
     'db_host_instance' => 'SQLEXPRESS',
-    'db_user_name' => 'bdb34fd3c3f34e',
-    'db_password' => '9ead21c8',
-    'db_name' => 'heroku_90a31bffba5d14f',
+    'db_user_name' => 'qcasyjmkuq',
+    'db_password' => 'bwk4HzjKXZ',
+    'db_name' => 'qcasyjmkuq',
     'db_type' => 'mysql',
-    'db_port' => '',
+    'db_port' => '3306',
     'db_manager' => 'MysqliManager',
   ),
   'dbconfigoption' => 
