@@ -173,7 +173,7 @@ $sugar_config = array (
   'default_email_client' => 'sugar',
   'default_email_editor' => 'html',
   'default_export_charset' => 'UTF-8',
-  'default_language' => 'en_us',
+  'default_language' => 'es_ES',
   'default_locale_name_format' => 's f l',
   'default_max_tabs' => '7',
   'default_module' => 'Home',
@@ -225,6 +225,7 @@ $sugar_config = array (
   'languages' => 
   array (
     'en_us' => 'English (US)',
+    'es_ES' => 'Español (ES)',
   ),
   'large_scale_test' => false,
   'lead_conv_activity_opt' => 'donothing',
