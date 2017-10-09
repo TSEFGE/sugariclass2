@@ -224,7 +224,6 @@ $sugar_config = array (
   'js_lang_version' => 1,
   'languages' => 
   array (
-    'en_us' => 'English (US)',
     'es_ES' => 'Español (ES)',
   ),
   'large_scale_test' => false,
