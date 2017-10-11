@@ -1,5 +1,5 @@
 <?php
-// created: 2017-10-06 09:14:36
+// created: 2017-10-11 05:51:11
 $sugar_config = array (
   'admin_access_control' => false,
   'admin_export_only' => false,
@@ -199,6 +199,7 @@ $sugar_config = array (
   'disable_convert_lead' => false,
   'disable_export' => false,
   'disable_persistent_connections' => 'false',
+  'disabled_languages' => 'en_us',
   'display_email_template_variable_chooser' => false,
   'display_inbound_email_buttons' => false,
   'dump_slow_queries' => false,
@@ -220,12 +221,12 @@ $sugar_config = array (
     'max_retries' => 5,
     'timeout' => 86400,
   ),
-  'js_custom_version' => '',
+  'js_custom_version' => 1,
   'js_lang_version' => 1,
   'languages' => 
   array (
     'en_us' => 'English',
-    'es_ES' => 'Espaniol (ES)',
+    'es_ES' => 'Español',
   ),
   'large_scale_test' => false,
   'lead_conv_activity_opt' => 'donothing',
