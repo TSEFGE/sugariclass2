@@ -1,7 +1,7 @@
 <?php /* Smarty version 2.6.11, created on 2017-10-12 00:03:10
-         compiled from include/SugarFields/Fields/Enum/DetailView.tpl */ ?>
+         compiled from include/SugarFields/Fields/Datetime/DetailView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugarvar', 'include/SugarFields/Fields/Enum/DetailView.tpl', 40, false),array('function', 'sugarvar_connector', 'include/SugarFields/Fields/Enum/DetailView.tpl', 48, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugarvar', 'include/SugarFields/Fields/Datetime/DetailView.tpl', 45, false),array('function', 'sugarvar_connector', 'include/SugarFields/Fields/Datetime/DetailView.tpl', 57, false),)), $this); ?>
 {*
 /*********************************************************************************
  * SugarCRM Community Edition is a customer relationship management program developed by
@@ -38,24 +38,32 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugarvar', 
  * "Powered by SugarCRM".
  ********************************************************************************/
 
-*}
-{* This is here so currency fields, who don't really have dropdown
-lists can work. *}
-{if is_string(<?php echo smarty_function_sugarvar(array('key' => 'options','string' => true), $this);?>
-)}
-<input type="hidden" class="sugar_field" id="<?php echo smarty_function_sugarvar(array('key' => 'name'), $this);?>
-" value="{ <?php echo smarty_function_sugarvar(array('key' => 'options','string' => true), $this);?>
- }">
-{ <?php echo smarty_function_sugarvar(array('key' => 'options','string' => true), $this);?>
- }
-{else}
-<input type="hidden" class="sugar_field" id="<?php echo smarty_function_sugarvar(array('key' => 'name'), $this);?>
-" value="{ <?php echo smarty_function_sugarvar(array('key' => 'value','string' => true), $this);?>
- }">
-{ <?php echo smarty_function_sugarvar(array('key' => 'options','string' => true), $this);?>
-[<?php echo smarty_function_sugarvar(array('key' => 'value','string' => true), $this);?>
-]}
-{/if}
-<?php if (! empty ( $this->_tpl_vars['displayParams']['enableConnectors'] )):  echo smarty_function_sugarvar_connector(array('view' => 'DetailView'), $this);?>
 
+*}
+{*
+    check to see if 'date_formatted_value' has been added to the vardefs, and use it if it has, otherwise use the normal sugarvar function
+*}
+<?php if (! empty ( $this->_tpl_vars['vardef']['date_formatted_value'] )): ?>
+    {assign var="value" value=<?php echo $this->_tpl_vars['vardef']['date_formatted_value']; ?>
+ }
+<?php else: ?>
+    {if strlen(<?php echo smarty_function_sugarvar(array('key' => 'value','string' => true), $this);?>
+) <= 0}
+        {assign var="value" value=<?php echo smarty_function_sugarvar(array('key' => 'default_value','string' => true), $this);?>
+ }
+    {else}
+        {assign var="value" value=<?php echo smarty_function_sugarvar(array('key' => 'value','string' => true), $this);?>
+ }
+    {/if}
+<?php endif; ?>
+
+
+
+<span class="sugar_field" id="<?php echo smarty_function_sugarvar(array('key' => 'name'), $this);?>
+">{$value}</span>
+<?php if (! empty ( $this->_tpl_vars['displayParams']['enableConnectors'] )): ?>
+{if !empty($value)}
+<?php echo smarty_function_sugarvar_connector(array('view' => 'DetailView'), $this);?>
+
+{/if}
 <?php endif; ?>

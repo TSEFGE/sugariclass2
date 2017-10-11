@@ -1,8 +1,8 @@
 <?php
-// created: 2017-10-11 06:34:13
+// created: 2017-10-11 21:18:18
 $mod_strings = array (
   'LBL_CONTACTO' => 'Medio de Contacto',
-  'LBL_CURSO' => 'curso',
+  'LBL_CURSO' => 'Curso',
   'LBL_ESTATUS' => 'Estatus',
   'LBL_FECHACONTACTO' => 'Fecha de Contacto',
   'LBL_HORARIO' => 'Hora de Inicio',

@@ -1,7 +1,7 @@
-<?php /* Smarty version 2.6.11, created on 2017-10-12 00:03:10
-         compiled from include/SugarFields/Fields/Enum/DetailView.tpl */ ?>
+<?php /* Smarty version 2.6.11, created on 2017-10-12 00:08:35
+         compiled from include/SugarFields/Fields/Text/EditView.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
-smarty_core_load_plugins(array('plugins' => array(array('function', 'sugarvar', 'include/SugarFields/Fields/Enum/DetailView.tpl', 40, false),array('function', 'sugarvar_connector', 'include/SugarFields/Fields/Enum/DetailView.tpl', 48, false),)), $this); ?>
+smarty_core_load_plugins(array('plugins' => array(array('function', 'sugarvar', 'include/SugarFields/Fields/Text/EditView.tpl', 38, false),)), $this); ?>
 {*
 /*********************************************************************************
  * SugarCRM Community Edition is a customer relationship management program developed by
@@ -39,23 +39,30 @@ smarty_core_load_plugins(array('plugins' => array(array('function', 'sugarvar', 
  ********************************************************************************/
 
 *}
-{* This is here so currency fields, who don't really have dropdown
-lists can work. *}
-{if is_string(<?php echo smarty_function_sugarvar(array('key' => 'options','string' => true), $this);?>
+{if empty(<?php echo smarty_function_sugarvar(array('key' => 'value','string' => true), $this);?>
 )}
-<input type="hidden" class="sugar_field" id="<?php echo smarty_function_sugarvar(array('key' => 'name'), $this);?>
-" value="{ <?php echo smarty_function_sugarvar(array('key' => 'options','string' => true), $this);?>
- }">
-{ <?php echo smarty_function_sugarvar(array('key' => 'options','string' => true), $this);?>
+{assign var="value" value=<?php echo smarty_function_sugarvar(array('key' => 'default_value','string' => true), $this);?>
  }
 {else}
-<input type="hidden" class="sugar_field" id="<?php echo smarty_function_sugarvar(array('key' => 'name'), $this);?>
-" value="{ <?php echo smarty_function_sugarvar(array('key' => 'value','string' => true), $this);?>
- }">
-{ <?php echo smarty_function_sugarvar(array('key' => 'options','string' => true), $this);?>
-[<?php echo smarty_function_sugarvar(array('key' => 'value','string' => true), $this);?>
-]}
-{/if}
-<?php if (! empty ( $this->_tpl_vars['displayParams']['enableConnectors'] )):  echo smarty_function_sugarvar_connector(array('view' => 'DetailView'), $this);?>
+{assign var="value" value=<?php echo smarty_function_sugarvar(array('key' => 'value','string' => true), $this);?>
+ }
+{/if}  
 
-<?php endif; ?>
+
+<?php ob_start();  echo smarty_function_sugarvar(array('key' => 'name'), $this); $this->_smarty_vars['capture']['idname'] = ob_get_contents();  $this->assign('idname', ob_get_contents());ob_end_clean();  if (! empty ( $this->_tpl_vars['displayParams']['idName'] )): ?>
+    <?php $this->assign('idname', $this->_tpl_vars['displayParams']['idName']);  endif; ?>
+
+
+<textarea  id='<?php echo $this->_tpl_vars['idname']; ?>
+' name='<?php echo $this->_tpl_vars['idname']; ?>
+'
+rows="<?php if (! empty ( $this->_tpl_vars['displayParams']['rows'] )):  echo $this->_tpl_vars['displayParams']['rows'];  elseif (! empty ( $this->_tpl_vars['vardef']['rows'] )):  echo $this->_tpl_vars['vardef']['rows'];  else:  echo 4;  endif; ?>" 
+cols="<?php if (! empty ( $this->_tpl_vars['displayParams']['cols'] )):  echo $this->_tpl_vars['displayParams']['cols'];  elseif (! empty ( $this->_tpl_vars['vardef']['cols'] )):  echo $this->_tpl_vars['vardef']['cols'];  else:  echo 60;  endif; ?>" 
+title='<?php echo $this->_tpl_vars['vardef']['help']; ?>
+' tabindex="<?php echo $this->_tpl_vars['tabindex']; ?>
+" <?php echo $this->_tpl_vars['displayParams']['field']; ?>
+
+<?php if (! empty ( $this->_tpl_vars['displayParams']['accesskey'] )): ?> accesskey='<?php echo $this->_tpl_vars['displayParams']['accesskey']; ?>
+' <?php endif; ?> >{$value}</textarea>
+
+

@@ -1,5 +1,5 @@
 <?php
-// created: 2017-10-11 06:37:38
+// created: 2017-10-11 21:19:43
 $mod_strings = array (
   'LBL_ID' => 'ID:',
   'LBL_DATE_ENTERED' => 'Fecha de Creación',
@@ -200,7 +200,7 @@ $mod_strings = array (
   'LBL_CONTACT_HISTORY_SUBPANEL_TITLE' => 'Emails de contactos relacionados',
   'LBL_USER_SYNC' => 'Sincronizar Usuario',
   'LBL_CONTACTO' => 'Medio de Contacto',
-  'LBL_CURSO' => 'curso',
+  'LBL_CURSO' => 'Curso',
   'LBL_ESTATUS' => 'Estatus',
   'LBL_FECHACONTACTO' => 'Fecha de Contacto',
   'LBL_HORARIO' => 'Hora de Inicio',
