@@ -10,7 +10,6 @@
 "chmod 777 -R ./cache/",
 "chmod 777 -R ./modules/",
 "chmod 777 -R ./upload/",
-"chmod 777 -R ./custom/ZuckerReports2",
 "chmod 777 ./custom/blowfish/",
 "chmod 777 -R ./custom/modules/"]
 }
