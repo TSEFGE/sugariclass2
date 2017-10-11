@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2017-10-06 09:14:46
+<?php /* Smarty version 2.6.11, created on 2017-10-11 02:23:13
          compiled from themes/Sugar5/tpls/_headerSearch.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_getimage', 'themes/Sugar5/tpls/_headerSearch.tpl', 45, false),)), $this); ?>
